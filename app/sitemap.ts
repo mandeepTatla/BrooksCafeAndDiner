@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const SITE_URL = "https://brooks-cafe-and-diner.vercel.app"; // TODO: update when custom domain is ready
+const SITE_URL = "https://brookscafediner.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
