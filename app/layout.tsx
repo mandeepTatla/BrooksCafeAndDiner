@@ -3,7 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
 // ─── TODO: Replace with your real domain once purchased ───────────────────────
-const SITE_URL = "https://brookscafediner.in";
+const SITE_URL = "https://brooks-cafe-and-diner.vercel.app";
 // ──────────────────────────────────────────────────────────────────────────────
 
 const playfair = Playfair_Display({
