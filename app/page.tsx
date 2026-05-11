@@ -167,7 +167,7 @@ export default function Home() {
               </p>
             </div>
             <p className="text-white/60 text-xs tracking-widest uppercase">
-              Bakery · Café · Restaurant
+              Bakery · Café · Restaurant in Batala
             </p>
 
             {/* CTA buttons */}
