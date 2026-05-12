@@ -27,48 +27,57 @@ export const metadata: Metadata = {
     template: "%s | Brooks Café & Diner, Batala",
   },
   description:
-    "Brooks Café & Diner — Batala's best cafe, bakery & family restaurant. Specialty coffee, fresh pastries, cakes, continental food & desserts. Birthday celebrations & family dine-in. Opposite Chitti Ground, Batala, Punjab.",
+    "Brooks Café & Diner — Batala's best cafe, bakery & restaurant. Specialty coffee, pizza, fresh pastries, cakes & desserts. Private hall for birthday parties & anniversary celebrations. Opposite Chitti Ground, Batala, Punjab.",
 
   // ── Keywords (supports content relevance signals) ────────────────────────────
   keywords: [
-    // Primary
-    "best cafe in Batala",
-    "cafe in Batala",
-    "best bakery in Batala",
-    "bakery in Batala",
-    "best restaurant in Batala",
-    "family restaurant in Batala",
-    "coffee shop in Batala",
+    // Brand
     "Brooks Cafe Batala",
     "Brooks Cafe and Diner",
-    // High intent / near me
-    "cafe near me Batala",
-    "bakery near me Batala",
-    "restaurant near me Batala",
-    "dine in restaurant Batala",
-    "best place to eat in Batala",
-    // Desserts & specialty
-    "dessert cafe Batala",
-    "best desserts in Batala",
+    "Brooks Diner Batala",
+    // Top search terms (from real search data)
+    "restaurants in Batala",
+    "restaurants near me Batala",
+    "restaurant Batala",
+    "best restaurants in Batala",
+    "Batala restaurant",
+    "restaurants Batala",
+    // Cafe
+    "cafe in Batala",
+    "best cafe in Batala",
+    "Batala cafe",
+    "coffee in Batala",
+    "coffee shop Batala",
+    // Bakery
+    "best bakery in Batala",
+    "bakery in Batala",
+    "cake shop Batala",
     "cakes in Batala",
     "pastry shop Batala",
-    "cake shop Batala",
-    // Occasions
-    "birthday party cafe Batala",
-    "birthday celebration restaurant Batala",
-    "anniversary dinner Batala",
-    "family dinner Batala",
-    // Food categories
+    // Pizza & food
+    "pizza in Batala",
+    "pizza Batala",
     "continental food Batala",
     "breakfast cafe Batala",
-    "bakery cafe Punjab",
-    "coffee shop Punjab",
-    "late night cafe Batala",
-    // Location variants
+    // Occasions & party hall
+    "birthday party hall Batala",
+    "birthday hall Batala",
+    "party hall Batala",
+    "anniversary party hall Batala",
+    "birthday party restaurant Batala",
+    "birthday celebration Batala",
+    "anniversary dinner Batala",
+    "private party venue Batala",
+    "family restaurant Batala",
+    "family dinner Batala",
+    // Desserts
+    "dessert cafe Batala",
+    "best desserts in Batala",
+    // Location
     "cafe Batala Punjab",
     "restaurant Batala Punjab",
-    "Chitti Ground Batala cafe",
-    "Gurdaspur district cafe",
+    "Chitti Ground Batala",
+    "Improvement Trust Colony Batala",
   ],
 
   // ── Canonical ────────────────────────────────────────────────────────────────
@@ -129,7 +138,7 @@ const structuredData = {
   name: "Brooks Café & Diner",
   alternateName: ["Brooks Cafe Batala", "Brooks Cafe and Diner"],
   description:
-    "Batala's premium cafe, bakery & family restaurant. Specialty coffee, fresh pastries, cakes, continental food, desserts & celebration dining. Where every meal feels like home.",
+    "Batala's best restaurant, cafe & bakery. Specialty coffee, fresh pastries, cakes, pizza, continental food & desserts. Private hall for birthday parties & anniversary celebrations. Where every meal feels like home.",
   url: SITE_URL,
   telephone: "+917719409835",
   priceRange: "₹₹",
@@ -138,7 +147,7 @@ const structuredData = {
 
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Opposite Chitti Ground",
+    streetAddress: "Opposite Chitti Ground, Improvement Trust Colony",
     addressLocality: "Batala",
     addressRegion: "Punjab",
     postalCode: "143505",
@@ -165,7 +174,14 @@ const structuredData = {
 
   servesCuisine: [
     "Bakery", "Cafe", "Continental", "Indian",
-    "Desserts", "Coffee", "Pastry", "Fast Food",
+    "Desserts", "Coffee", "Pastry", "Pizza",
+  ],
+
+  amenityFeature: [
+    { "@type": "LocationFeatureSpecification", name: "Private Party Hall", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Birthday Party Venue", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Anniversary Celebrations", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Dine In", value: true },
   ],
 
   hasMenu: `${SITE_URL}/menu/brooks-food-menu.pdf`,
