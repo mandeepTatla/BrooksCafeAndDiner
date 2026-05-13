@@ -393,6 +393,9 @@ export default function Home() {
           <p className="mt-10 text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
             © {new Date().getFullYear()} Brooks Café & Diner. All rights reserved.
           </p>
+          <p className="mt-1 text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
+            Trading as HR Food Works
+          </p>
         </footer>
       </main>
     </>
