@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 // ─── TODO: Replace with your real domain once purchased ───────────────────────
@@ -214,6 +215,7 @@ export default function RootLayout({
       <body>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
