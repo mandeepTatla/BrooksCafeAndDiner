@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function StickyHeader() {
   const [visible, setVisible] = useState(false);
@@ -31,11 +32,18 @@ export default function StickyHeader() {
         className="rounded-full object-cover shrink-0"
       />
       <span
-        className="ml-3 text-white text-sm font-medium tracking-wide"
+        className="ml-3 text-white text-sm font-medium tracking-wide flex-1"
         style={{ fontFamily: "var(--font-playfair)" }}
       >
         Brooks Café & Diner
       </span>
+      <Link
+        href="/bakery"
+        className="text-xs font-semibold px-4 py-2 rounded-full"
+        style={{ backgroundColor: "#c8a96e", color: "#1c2012" }}
+      >
+        Bakery
+      </Link>
     </header>
   );
 }

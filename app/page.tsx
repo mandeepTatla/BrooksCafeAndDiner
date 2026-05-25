@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import HeroSlider from "./components/HeroSlider";
 import StickyHeader from "./components/StickyHeader";
 
@@ -282,6 +283,40 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── Bakery Teaser ── */}
+        <section className="px-5 py-14" style={{ backgroundColor: "#f7f3ec" }}>
+          <p className="text-xs tracking-[0.25em] uppercase font-semibold mb-3 text-center" style={{ color: "#c8a96e" }}>
+            Now Open
+          </p>
+          <h2 className="text-3xl text-center mb-8 leading-snug" style={{ fontFamily: "var(--font-playfair)", color: "#1c2012" }}>
+            Brooks Bakery
+          </h2>
+
+          {/* Card with image + overlay CTA */}
+          <Link href="/bakery" className="block relative overflow-hidden rounded-3xl max-w-sm mx-auto" style={{ aspectRatio: "4/3" }}>
+            <Image
+              src="/images/bakery/brooks-bakery-table-spread.jpg"
+              alt="Brooks Bakery — cakes, desserts and more"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 640px) 100vw, 480px"
+              loading="lazy"
+            />
+            {/* Dark gradient */}
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(28,32,18,0.88) 0%, rgba(28,32,18,0.2) 60%)" }} />
+            {/* Bottom text */}
+            <div className="absolute bottom-0 left-0 right-0 px-5 pb-5">
+              <p className="text-white/70 text-xs mb-3">Kunafa Bomb · Tiramisu · Cheesecakes · Croissants</p>
+              <span
+                className="inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-full"
+                style={{ backgroundColor: "#c8a96e", color: "#1c2012" }}
+              >
+                See the Bakery Menu →
+              </span>
+            </div>
+          </Link>
+        </section>
+
         {/* ── Location & Hours ── */}
         <section id="location" style={{ backgroundColor: "#ede8df" }}>
           {/* Google Maps embed */}
@@ -354,17 +389,6 @@ export default function Home() {
               </p>
             </a>
 
-            {/* WhatsApp */}
-            <a
-              href={WHATSAPP_HREF}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full text-white font-semibold text-base py-4 rounded-xl"
-              style={{ backgroundColor: "#4a5e38" }}
-            >
-              <IconWhatsApp />
-              Chat on WhatsApp
-            </a>
           </div>
         </section>
 
