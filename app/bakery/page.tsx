@@ -3,6 +3,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import StickyHeader from "../components/StickyHeader";
 
+const SITE_URL = "https://brookscafediner.com";
+
 export const metadata: Metadata = {
   title: "Best Bakery in Batala | Fresh Cakes & Desserts — Brooks Café & Diner",
   description:
@@ -21,6 +23,32 @@ export const metadata: Metadata = {
     "order cake Batala",
     "bakery near me Batala",
   ],
+  alternates: {
+    canonical: `${SITE_URL}/bakery`,
+  },
+  openGraph: {
+    title: "Brooks Bakery | Fresh Cakes & Desserts in Batala",
+    description:
+      "Freshly baked every morning — Kunafa Bomb, Mango Tres Leches, Tiramisu, Biscoff Cheesecake, Croissants & more. Brooks Café & Diner, Batala.",
+    url: `${SITE_URL}/bakery`,
+    siteName: "Brooks Café & Diner",
+    images: [
+      {
+        url: "/images/bakery/brooks-bakery-table-spread.jpg",
+        width: 1080,
+        height: 1080,
+        alt: "Brooks Bakery — fresh cakes and desserts in Batala",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Brooks Bakery | Batala",
+    description: "Fresh cakes, desserts & pastries baked daily. Kunafa Bomb, Tiramisu, Cheesecakes & more.",
+    images: ["/images/bakery/brooks-bakery-table-spread.jpg"],
+  },
 };
 
 // ── Menu items ────────────────────────────────────────────────────────────────
@@ -51,9 +79,51 @@ const MENU_ITEMS = [
   { src: "/images/bakery/brooks-bakery-croissants-brownie.jpg",    name: "Croissants & Brownie",     category: "Baked" },
 ];
 
+const bakerySchema = {
+  "@context": "https://schema.org",
+  "@type": "BakeryOrCoffeeShop",
+  name: "Brooks Bakery at Brooks Café & Diner",
+  description:
+    "Freshly baked cakes, desserts and pastries every morning. Kunafa Bomb, Mango Tres Leches, Tiramisu, Biscoff Cheesecake, Croissants & more.",
+  url: `${SITE_URL}/bakery`,
+  telephone: "+917719409835",
+  image: `${SITE_URL}/images/bakery/brooks-bakery-table-spread.jpg`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Opposite Chitti Ground, Improvement Trust Colony",
+    addressLocality: "Batala",
+    addressRegion: "Punjab",
+    postalCode: "143505",
+    addressCountry: "IN",
+  },
+  servesCuisine: ["Bakery", "Desserts", "Pastry", "Cakes"],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      opens: "10:30",
+      closes: "22:30",
+    },
+  ],
+  hasMenuItem: [
+    { "@type": "MenuItem", name: "Kunafa Bomb", description: "Crispy kunafa shell, cream cheese filling, topped with chocolate & pistachio." },
+    { "@type": "MenuItem", name: "Mango Tres Leches", description: "Light sponge soaked in three milks, fresh mango & whipped cream." },
+    { "@type": "MenuItem", name: "Biscoff Cheesecake" },
+    { "@type": "MenuItem", name: "Dark Chocolate Cake" },
+    { "@type": "MenuItem", name: "Tiramisu Box" },
+    { "@type": "MenuItem", name: "Cheesecakes" },
+    { "@type": "MenuItem", name: "Croissants & Brownie" },
+  ],
+  sameAs: ["https://www.instagram.com/brookscafeanddiner"],
+};
+
 export default function BakeryPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bakerySchema) }}
+      />
       <StickyHeader />
 
       <main style={{ backgroundColor: "#f7f3ec" }}>
