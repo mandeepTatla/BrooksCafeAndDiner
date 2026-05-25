@@ -2,11 +2,11 @@ import Image from "next/image";
 
 // Static fallback images shown when the Instagram token is not yet configured
 const FALLBACK_IMAGES = [
-  { src: "/images/interior-ambiance.jpeg", alt: "Warm candlelit seating" },
-  { src: "/images/counter.jpeg", alt: "Brooks café counter" },
-  { src: "/images/dining-hall.jpeg", alt: "Main dining hall" },
-  { src: "/images/exterior-day.jpeg", alt: "Brooks Café exterior" },
-  { src: "/images/exterior-night.jpeg", alt: "Brooks Café entrance at dusk" },
+  { src: "/images/brooks-cafe-interior-ambiance.jpg", alt: "Warm candlelit seating" },
+  { src: "/images/brooks-cafe-barista-counter.jpg", alt: "Brooks café counter" },
+  { src: "/images/brooks-cafe-dining-hall.jpg", alt: "Main dining hall" },
+  { src: "/images/brooks-cafe-exterior-day.jpg", alt: "Brooks Café exterior" },
+  { src: "/images/brooks-cafe-exterior-night.jpg", alt: "Brooks Café entrance at dusk" },
 ];
 
 const INSTAGRAM_HREF = "https://www.instagram.com/brookscafeanddiner";

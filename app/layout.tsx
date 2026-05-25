@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     siteName: "Brooks Café & Diner",
     images: [
       {
-        url: "/images/dining-hall.jpeg",
+        url: "/images/brooks-cafe-dining-hall.jpg",
         width: 1200,
         height: 630,
         alt: "Brooks Café & Diner — Batala's best cafe and family restaurant",
@@ -110,7 +110,7 @@ export const metadata: Metadata = {
     title: "Brooks Café & Diner | Batala",
     description:
       "Best cafe, bakery & family restaurant in Batala, Punjab. Great food, coffee & desserts.",
-    images: ["/images/dining-hall.jpeg"],
+    images: ["/images/brooks-cafe-dining-hall.jpg"],
   },
 
   // ── Crawling ─────────────────────────────────────────────────────────────────
@@ -142,8 +142,8 @@ const structuredData = {
   url: SITE_URL,
   telephone: "+917719409835",
   priceRange: "₹₹",
-  image: `${SITE_URL}/images/dining-hall.jpeg`,
-  logo: `${SITE_URL}/images/logo.jpeg`,
+  image: `${SITE_URL}/images/brooks-cafe-dining-hall.jpg`,
+  logo: `${SITE_URL}/images/brooks-cafe-logo.jpg`,
 
   address: {
     "@type": "PostalAddress",

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeroSlider from "./components/HeroSlider";
+import StickyHeader from "./components/StickyHeader";
 
 // ─── TODO: Replace these with your real contact details ───────────────────────
 const PHONE_DISPLAY = "+91 77194 09835";
@@ -95,37 +96,7 @@ function IconClock() {
 export default function Home() {
   return (
     <>
-      {/* ── Sticky top bar ── */}
-      <header
-        style={{ backgroundColor: "rgba(74,94,56,0.95)", backdropFilter: "blur(8px)" }}
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-3"
-      >
-        <div className="flex items-center gap-2.5">
-          <Image
-            src="/images/logo.jpeg"
-            alt="Brooks Café & Diner"
-            width={36}
-            height={36}
-            className="rounded-full object-cover"
-            priority
-          />
-          <span
-            className="text-white text-sm font-medium tracking-wide"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            Brooks Café & Diner
-          </span>
-        </div>
-        <a
-          href={PHONE_HREF}
-          className="flex items-center gap-1.5 text-sm font-semibold px-4 py-2 rounded-full"
-          style={{ backgroundColor: "#c8a96e", color: "#1c2012" }}
-          aria-label="Call Brooks Café"
-        >
-          <IconPhone />
-          <span className="hidden sm:inline">Call Us</span>
-        </a>
-      </header>
+      <StickyHeader />
 
       <main>
         {/* ── Hero ── */}
@@ -143,7 +114,7 @@ export default function Home() {
           {/* Hero content */}
           <div className="relative z-10 flex flex-col items-center gap-5 w-full max-w-sm mx-auto">
             <Image
-              src="/images/logo.jpeg"
+              src="/images/brooks-cafe-logo.jpg"
               alt="Brooks Café & Diner logo"
               width={96}
               height={96}
@@ -170,7 +141,7 @@ export default function Home() {
               Bakery · Café · Restaurant in Batala
             </p>
 
-            {/* CTA buttons */}
+          {/* CTA buttons */}
             <div className="flex flex-col gap-3 w-full mt-2">
               <a
                 href={MAPS_HREF}
@@ -202,6 +173,20 @@ export default function Home() {
                   Instagram
                 </a>
               </div>
+            </div>
+          </div>
+
+          {/* Scroll cue — pinned to bottom of hero section */}
+          <div className="absolute bottom-7 left-0 right-0 flex flex-col items-center z-10" style={{ gap: "2px" }}>
+            <div className="animate-bounce" style={{ color: "#c8a96e" }}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+            <div className="animate-bounce" style={{ color: "rgba(200,169,110,0.4)", animationDelay: "0.15s" }}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
             </div>
           </div>
         </section>
@@ -247,6 +232,53 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ── Our Space ── */}
+        <section className="px-6 py-16" style={{ backgroundColor: "#1c2012" }}>
+          <p
+            className="text-xs tracking-[0.25em] uppercase font-semibold mb-4 text-center"
+            style={{ color: "#c8a96e" }}
+          >
+            Our Space
+          </p>
+          <h2
+            className="text-3xl leading-snug mb-8 text-center max-w-xs mx-auto text-white"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            A place to relax and enjoy.
+          </h2>
+          <div className="flex flex-col gap-3 max-w-sm mx-auto">
+            <div className="relative w-full overflow-hidden rounded-2xl" style={{ height: "280px" }}>
+              <Image
+                src="/images/brooks-cafe-interior-overview.jpg"
+                alt="Brooks Café dining area with warm lighting"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 640px) 100vw, 640px"
+              />
+            </div>
+            <div className="flex gap-3">
+              <div className="relative flex-1 overflow-hidden rounded-2xl" style={{ height: "180px" }}>
+                <Image
+                  src="/images/brooks-cafe-interior-dining.jpg"
+                  alt="Brooks Café interior with counter"
+                  fill
+                  className="object-cover object-center"
+                  sizes="50vw"
+                />
+              </div>
+              <div className="relative flex-1 overflow-hidden rounded-2xl" style={{ height: "180px" }}>
+                <Image
+                  src="/images/brooks-cafe-cozy-seating.jpg"
+                  alt="Brooks Café cosy seating area"
+                  fill
+                  className="object-cover object-center"
+                  sizes="50vw"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -339,7 +371,7 @@ export default function Home() {
         {/* ── Footer CTA ── */}
         <footer className="px-6 py-14 text-center" style={{ backgroundColor: "#2d3b22" }}>
           <Image
-            src="/images/logo.jpeg"
+            src="/images/brooks-cafe-logo.jpg"
             alt="Brooks Café & Diner"
             width={64}
             height={64}
