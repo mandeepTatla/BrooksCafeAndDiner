@@ -56,12 +56,14 @@ export const metadata: Metadata = {
 const FEATURED = [
   {
     src: "/images/bakery/brooks-bakery-kunafa-bomb-layers.jpg",
+    videoSrc: "/videos/brooks-bakery-kunafa-bomb.mp4",
     name: "Kunafa Bomb",
     desc: "Crispy kunafa shell, cream cheese filling, topped with chocolate & pistachio.",
     tag: "Chef's Special",
   },
   {
     src: "/images/bakery/brooks-bakery-tres-leches-hero.jpg",
+    videoSrc: "/videos/brooks-bakery-tres-leches.mp4",
     name: "Mango Tres Leches",
     desc: "Light sponge soaked in three milks, fresh mango & whipped cream.",
     tag: "Must Try",
@@ -154,13 +156,23 @@ export default function BakeryPage() {
           <div className="flex flex-col gap-6 max-w-sm mx-auto">
             {FEATURED.map((item) => (
               <div key={item.name} className="overflow-hidden rounded-2xl" style={{ backgroundColor: "#2d3b22" }}>
-                <div className="relative w-full" style={{ aspectRatio: "4/3" }}>
+                <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4/3" }}>
+                  {/* Poster image shown until video loads */}
                   <Image
                     src={item.src}
                     alt={item.name}
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 640px) 100vw, 480px"
+                  />
+                  <video
+                    src={item.videoSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="none"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
                   />
                   <span
                     className="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full"
